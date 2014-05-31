@@ -76,9 +76,11 @@ hr.star-primary:after {
 header {
     text-align: center;
     color: #fff;
-    background: #18bc9c;
+    background: url('../img/fundo1.png');
 }
-
+.navbar-default {
+    background-color: #323232;
+}
 header .container {
     padding-top: 100px;
     padding-bottom: 50px;
