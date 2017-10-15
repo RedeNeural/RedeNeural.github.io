@@ -9,7 +9,6 @@
     <meta name="author" content="">
 
     <title>Grupo Rede Neural</title>
-
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="css/freelancer.css" rel="stylesheet" type="text/css">
@@ -17,7 +16,7 @@
     <!-- Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-
+    
     <!-- IE8 support for HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -72,7 +71,7 @@
                     <div class="intro-text">
                         <span class="name">Rede Neural</span>
                         <hr class="star-light">
-                        <span class="skills">Um texto sobre nos</span>
+                        <span class="skills">Pessoas, Amigos, Tecnologia</span>
                     </div>
                 </div>
             </div>
@@ -87,71 +86,10 @@
                     <hr class="star-primary">
                 </div>
             </div>
-            <!--
-            <div class="row">
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="" />
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/cake.png" class="img-responsive" alt="" />
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/circus.png" class="img-responsive" alt="" />
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/game.png" class="img-responsive" alt="" />
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/safe.png" class="img-responsive" alt="" />
-                    </a>
-                </div>
-                <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-                        <div class="caption">
-                            <div class="caption-content">
-                                <i class="fa fa-search-plus fa-3x"></i>
-                            </div>
-                        </div>
-                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="" />
-                    </a>
-                </div>
+            <div class="row" id="flickr">
+
             </div>
-        -->
-        Aqui vai constar nosso portfolio
+        Portifolio
         </div>
     </section>
 
@@ -221,21 +159,27 @@
                 <div class="row">
                     <div class="footer-col col-md-4">
                         <h3>Localizacao</h3>
-                        <p>3481 Melrose Place
-                            <br>Beverly Hills, CA 90210</p>
+                        <p>Caxias do Sul
+                        <br>Somos livres, andarilhos, se tiver café estamos ai! </p>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Pela Web</h3>
                         <ul class="list-inline">
-                            <li><a target="_blank" href="https://www.facebook.com/redeneuralcaxias" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            <li>
+                                <a target="_blank" href="https://www.facebook.com/redeneuralcaxias" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
                             </li>
-                            <li><a target="_blank" href="https://github.com/RedeNeural" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            <li>
+                                <a target="_blank" href="https://github.com/RedeNeural" class="btn-social btn-outline"><i class="fa fa-fw fa-github"></i></a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://www.meetup.com/pt-BR/Rede-Neural/" class="btn-social btn-outline"><i class="fa fa-fw fa-meetup"></i></a>
                             </li>
                         </ul>
                     </div>
                     <div class="footer-col col-md-4">
                         <h3>Informacoes</h3>
-                        <p>Vamos ver informacoes.</p>
+                        <p>Meetups mensais.</p>
+                        <p>Normalmente ao sabado de manha.</p>
                     </div>
                 </div>
             </div>
@@ -451,6 +395,24 @@
     <script src="js/classie.js"></script>
     <script src="js/cbpAnimatedHeader.js"></script>
     <script src="js/freelancer.js"></script>
+    <script>
+        function flickr(user){
+            var url = 'http://api.flickr.com/services/feeds/photos_public.gne?id='+user+'&format=json&jsoncallback=?'
+            $.getJSON(url, 
+                function(data){
+                    console.log(data);
+                    for(i=0; i<(data.items.length-1); i++){
+                        $("<img />")
+                        .attr("src", data.items[i].media.m)
+                        .attr("class", "col-md-4")
+                        .appendTo("#flickr")
+                        .wrap("<a href='" + data.items[i].link + "' title='" + data.items[i].title + "' target='_blank'><\/a>");
+                    }
+                }
+            );
+        }
+        flickr('155987422@N02');
+    </script>
 
 </body>
 
